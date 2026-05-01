@@ -13,10 +13,10 @@ function ProjectCard({ p, i }) {
         transition: `opacity 0.5s ease ${(i%3)*70}ms, transform 0.5s ease ${(i%3)*70}ms, all 0.3s ease`,
         background: hov ? "#ffffff" : "#f9fafb",
         border: `1.5px solid ${hov ? p.color + "25" : "rgba(0,0,0,0.08)"}`,
-        borderRadius: "14px", padding: "28px",
-        display: "flex", flexDirection: "column", gap: "16px",
+        borderRadius: "14px", padding: "26px",
+        display: "flex", flexDirection: "column", gap: "18px",
         position: "relative", overflow: "hidden",
-        boxShadow: hov ? `0 12px 32px ${p.color}12` : "0 2px 8px rgba(0,0,0,0.04)",
+        boxShadow: hov ? `0 12px 32px ${p.color}12` : "0 2px 10px rgba(0,0,0,0.05)",
         cursor: "pointer",
       }}>
       {/* accent bar */}
@@ -49,10 +49,10 @@ function ProjectCard({ p, i }) {
       </p>
       
       {/* tags */}
-      <div style={{ display:"flex", flexWrap:"wrap", gap:"6px", marginTop:"8px" }}>
+      <div style={{ display:"flex", flexWrap:"wrap", gap:"8px", marginTop:"10px" }}>
         {p.tags.map(t => (
           <span key={t} style={{
-            padding:"4px 12px",borderRadius:"20px",
+            padding:"6px 14px",borderRadius:"20px",
             background:`${p.color}12`,border:`1px solid ${p.color}25`,
             fontSize:"11px",color:p.color,
             fontFamily:"'Poppins',sans-serif",letterSpacing:"0.03em", fontWeight:600,

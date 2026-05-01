@@ -41,6 +41,30 @@ export default function App() {
         ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.15);border-radius:4px;}
         ::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,0.25);}
         ::selection{background:#3b82f6;color:#ffffff;}
+        .hero-stats{position:absolute;bottom:48px;right:48px;display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.6s ease 0.45s forwards;}
+        .hero-section{padding:110px 32px 80px !important;}
+        .about-section{padding:100px 32px 90px !important;}
+        .projects-section{padding:100px 32px 120px !important;}
+        .footer-section{padding:32px 32px !important;}
+        .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;}
+        .stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
+        @media (max-width:1024px) {
+          nav{padding:0 24px !important;}
+          .hero-section{padding:100px 24px 70px !important;}
+          .about-section{padding:80px 24px 70px !important;}
+          .projects-section{padding:80px 24px 100px !important;}
+          .footer-section{padding:28px 24px !important;}
+          .hero-stats{position:static;right:auto;bottom:auto;margin-top:36px;justify-content:center;}
+        }
+        @media (max-width:720px) {
+          nav{padding:0 16px !important;}
+          .hero-section{padding:80px 16px 60px !important;}
+          .about-section{padding:64px 16px 56px !important;}
+          .projects-section{padding:64px 16px 80px !important;}
+          .footer-section{padding:24px 16px !important;}
+          .about-grid{gap:22px;}
+          .stack-grid{gap:18px;}
+        }
       `}</style>
 
       <div style={{ minHeight:"100vh", background:"linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%)", color:"#1a202c" }}>
@@ -48,7 +72,7 @@ export default function App() {
         {/* NAV */}
         <nav style={{
           position:"fixed", top:0, left:0, right:0, zIndex:200,
-          height:"64px", padding:"0 48px",
+          height:"64px", padding:"0 32px",
           display:"flex", alignItems:"center", justifyContent:"space-between",
           background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.7)",
           backdropFilter:"blur(20px)",
@@ -61,7 +85,7 @@ export default function App() {
             fontWeight:700, color:"#1a202c",
             letterSpacing:"-0.02em",
           }}>
-            Portfolio
+            Projects
           </span>
           <div style={{ display:"flex", gap:"8px" }}>
             {NAV.map(n => (
@@ -78,9 +102,9 @@ export default function App() {
         </nav>
 
         {/* HERO */}
-        <section ref={homeRef} style={{
+        <section ref={homeRef} className="hero-section" style={{
           minHeight:"100vh", display:"flex", flexDirection:"column",
-          justifyContent:"center", padding:"100px 48px 80px",
+          justifyContent:"center", padding:"110px 32px 80px",
           position:"relative", overflow:"hidden",
         }}>
           {/* animated bg */}
@@ -97,15 +121,15 @@ export default function App() {
             borderRadius:"50%", pointerEvents:"none", animation:"float 6s ease-in-out infinite",
           }}/>
           <div style={{
-            position:"absolute", bottom:"10%", left:"-10%", width:"300px", height:"300px",
+            position:"absolute", bottom:"10%", left:"10%", width:"300px", height:"300px",
             background:"radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)",
             borderRadius:"50%", pointerEvents:"none", animation:"float 8s ease-in-out infinite 1s",
           }}/>
 
-          <div style={{ position:"relative", maxWidth:"900px" }}>
+          <div style={{ position:"relative", maxWidth:"760px" }}>
             <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.05s forwards" }}>
               <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", color:"#3b82f6", letterSpacing:"0.1em", display:"block", marginBottom:"20px", fontWeight:600 }}>
-                ✦ &nbsp; WELCOME TO MY PORTFOLIO
+                ✦ &nbsp; WELCOME TO MY PROJECTS
               </span>
             </div>
             <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.15s forwards" }}>
@@ -168,10 +192,8 @@ export default function App() {
           </div>
 
           {/* stat pills */}
-          <div style={{
-            position:"absolute", bottom:"48px", right:"48px",
-            display:"flex", gap:"12px", flexWrap:"wrap",
-            opacity:0, animation:"fadeUp 0.6s ease 0.45s forwards",
+          <div className="hero-stats" style={{
+            paddingTop:"10px",
           }}>
             {[
               { n: JS_PROJECTS.length,   l:"JavaScript", c:"#f59e0b" },
@@ -203,7 +225,7 @@ export default function App() {
         </section>
 
         {/* ABOUT */}
-        <section ref={aboutRef} style={{ padding:"120px 48px", borderTop:"1px solid rgba(0,0,0,0.06)", background:"#ffffff" }}>
+        <section ref={aboutRef} className="about-section" style={{ padding:"100px 32px", borderTop:"1px solid rgba(0,0,0,0.06)", background:"#ffffff" }}>
           <div style={{ maxWidth:"1100px", margin:"0 auto" }}>
             <div style={{ marginBottom:"68px" }}>
               <span style={{ opacity: aboutV?1:0, transition:"opacity 0.5s", fontFamily:"'Poppins',sans-serif", fontSize:"11px", color:"#3b82f6", letterSpacing:"0.12em", display:"block", marginBottom:"18px", fontWeight:600 }}>
@@ -215,12 +237,11 @@ export default function App() {
               <div style={{ height:"4px", width:"60px", background:"linear-gradient(90deg, #3b82f6, #8b5cf6)", borderRadius:"2px" }}/>
             </div>
 
-            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(260px, 1fr))", gap:"32px" }}>
+            <div className="about-grid" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(260px, 1fr))", gap:"28px" }}>
               {[
                 { icon:"▲", color:"#f59e0b", title:"JavaScript", body:"Vanilla JS projects that run in the browser — games, editors, and utilities built without any framework overhead." },
                 { icon:"◆", color:"#3b82f6", title:"React",      body:"Component-driven SPAs using React hooks, context, and composable UI patterns for richer interactivity." },
                 { icon:"●", color:"#8b5cf6", title:"Next.js",    body:"Full-stack projects with the App Router, server components, server actions, and edge functions." },
-                { icon:"✦", color:"#10b981", title:"Open Source",body:"Every project is free to explore. Tap ↗ on any card to open the source or live demo." },
               ].map((item, i) => (
                 <div key={item.title} style={{ 
                   opacity: 1, 
@@ -251,7 +272,7 @@ export default function App() {
         </section>
 
         {/* PROJECTS */}
-        <section ref={projectsRef} style={{ padding:"120px 48px 140px", borderTop:"1px solid rgba(0,0,0,0.06)", background:"#fafbfc" }}>
+        <section ref={projectsRef} className="projects-section" style={{ padding:"100px 32px 120px", borderTop:"1px solid rgba(0,0,0,0.06)", background:"#fafbfc" }}>
           <div style={{ maxWidth:"1200px", margin:"0 auto" }}>
             <div style={{ marginBottom:"72px" }}>
               <span style={{ opacity: projectsV?1:0, transition:"opacity 0.5s", fontFamily:"'Poppins',sans-serif", fontSize:"11px", color:"#3b82f6", letterSpacing:"0.12em", display:"block", marginBottom:"18px", fontWeight:600 }}>
@@ -269,14 +290,14 @@ export default function App() {
         </section>
 
         {/* FOOTER */}
-        <footer style={{
+        <footer className="footer-section" style={{
           borderTop:"1px solid rgba(0,0,0,0.06)",
-          padding:"40px 48px",
+          padding:"32px 32px",
           display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"20px",
           background:"#ffffff",
         }}>
           <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"15px", fontWeight:700, color:"#1a202c" }}>
-            Portfolio
+            Project
           </span>
           <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", color:"#9ca3af", letterSpacing:"0.05em", fontWeight:500 }}>
             © 2024–2026 · {total} PROJECTS · JS · REACT · NEXT.JS

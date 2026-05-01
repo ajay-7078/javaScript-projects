@@ -11,7 +11,7 @@ function StackSection({ sk, STACKS }) {
   return (
     <section ref={ref} style={{ marginBottom: "100px" }}>
       {/* header */}
-      <div style={{ opacity: v?1:0, transform: v?"translateY(0)":"translateY(20px)", transition:"opacity 0.5s, transform 0.5s", marginBottom:"48px" }}>
+      <div style={{ opacity: v?1:0, transform: v?"translateY(0)":"translateY(20px)", transition:"opacity 0.5s, transform 0.5s", marginBottom:"52px" }}>
         <div style={{ display:"flex", alignItems:"center", gap:"14px", marginBottom:"16px", flexWrap:"wrap" }}>
           <span style={{
             padding:"8px 16px", borderRadius:"8px",
@@ -33,7 +33,7 @@ function StackSection({ sk, STACKS }) {
       </div>
 
       {/* grid */}
-      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(300px,1fr))", gap:"20px" }}>
+      <div className="stack-grid" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(300px,1fr))", gap:"20px" }}>
         {shown.map((p, i) => <ProjectCard key={p.id} p={p} i={i} />)}
       </div>
     </section>
