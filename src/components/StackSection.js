@@ -9,31 +9,31 @@ function StackSection({ sk, STACKS }) {
   const shown = meta.projects;
 
   return (
-    <section ref={ref} style={{ marginBottom: "92px" }}>
+    <section ref={ref} style={{ marginBottom: "100px" }}>
       {/* header */}
-      <div style={{ opacity: v?1:0, transform: v?"translateY(0)":"translateY(18px)", transition:"opacity 0.5s, transform 0.5s", marginBottom:"28px" }}>
-        <div style={{ display:"flex", alignItems:"center", gap:"12px", marginBottom:"10px" }}>
+      <div style={{ opacity: v?1:0, transform: v?"translateY(0)":"translateY(20px)", transition:"opacity 0.5s, transform 0.5s", marginBottom:"48px" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:"14px", marginBottom:"16px", flexWrap:"wrap" }}>
           <span style={{
-            padding:"4px 12px", borderRadius:"6px",
-            background: meta.dim, border:`1px solid ${meta.border}`,
-            fontSize:"11px", fontFamily:"'JetBrains Mono',monospace",
-            color: meta.accent, letterSpacing:"0.08em", fontWeight:500,
+            padding:"8px 16px", borderRadius:"8px",
+            background: meta.dim, border:`2px solid ${meta.border}`,
+            fontSize:"12px", fontFamily:"'Poppins',sans-serif",
+            color: meta.accent, letterSpacing:"0.05em", fontWeight:700,
           }}>{meta.badge}</span>
-          <div style={{ flex:1, height:"1px", background:"rgba(0,0,0,0.06)" }} />
-          <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"10px", color:"rgba(0,0,0,0.25)", letterSpacing:"0.08em" }}>
+          <div style={{ flex:1, minWidth:"40px", height:"1.5px", background:"linear-gradient(90deg, rgba(0,0,0,0.1), transparent)" }} />
+          <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", color:"#6b7280", letterSpacing:"0.05em", fontWeight:500 }}>
             {meta.projects.length} projects
           </span>
         </div>
-        <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:"30px", fontWeight:700, color:"#333333", margin:"0 0 6px", letterSpacing:"-0.02em" }}>
+        <h2 style={{ fontFamily:"'Poppins',sans-serif", fontSize:"36px", fontWeight:800, color:"#1a202c", margin:"0 0 10px", letterSpacing:"-0.02em" }}>
           {meta.label}
         </h2>
-        <p style={{ fontFamily:"'Inter',sans-serif", fontSize:"15px", color:"rgba(0,0,0,0.45)", margin:0 }}>
+        <p style={{ fontFamily:"'Poppins',sans-serif", fontSize:"16px", color:"#6b7280", margin:0, fontWeight:400 }}>
           {meta.desc}
         </p>
       </div>
 
       {/* grid */}
-      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(280px,1fr))", gap:"14px" }}>
+      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(300px,1fr))", gap:"20px" }}>
         {shown.map((p, i) => <ProjectCard key={p.id} p={p} i={i} />)}
       </div>
     </section>

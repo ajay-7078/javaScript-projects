@@ -23,10 +23,6 @@ export const REACT_PROJECTS = [
 export const NEXT_PROJECTS = [
   { id:"n-1", name:"Weather Dashboard", about:"SSR 7-day forecast with hourly charts, wind/humidity panels, and a dynamic background adapting to live conditions.", link:"#weather", tags:["API","Dashboard"], type:"Dashboard", year:"2025", color:"#38bdf8" },
   { id:"n-2", name:"Dev Portfolio", about:"SEO-optimised portfolio with MDX blog, dark/light mode, animated project grid, and Vercel OG image generation.", link:"#portfolio", tags:["Portfolio","MDX"], type:"Website", year:"2025", color:"#a78bfa" },
-  { id:"n-3", name:"E-Commerce Storefront", about:"Full-stack shop with ISR product pages, Stripe checkout, cart context, and admin dashboard for inventory management.", link:"#storefront", tags:["E-Commerce","Stripe"], type:"Full-Stack", year:"2025", color:"#4ade80" },
-  { id:"n-4", name:"Link-in-Bio Tool", about:"Dynamic link-page builder with live preview, custom themes, click analytics, and sub-second loads via edge runtime.", link:"#link-in-bio", tags:["SaaS","Analytics"], type:"SaaS", year:"2025", color:"#fb923c" },
-  { id:"n-5", name:"Job Board", about:"Full-stack job board with Postgres, server actions for posting/filtering, RSS feed, and email alerts via Resend.", link:"#job-board", tags:["Full-Stack","Database"], type:"Full-Stack", year:"2024", color:"#facc15" },
-  { id:"n-6", name:"AI Chat Interface", about:"Streaming chat UI using the AI SDK, multi-turn history, model switcher, and conversation export to Markdown.", link:"#ai-chat", tags:["AI","Streaming"], type:"Web App", year:"2024", color:"#f9a8d4" },
 ];
 
 export const STACKS = {
