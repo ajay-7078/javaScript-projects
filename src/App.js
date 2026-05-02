@@ -126,68 +126,130 @@ export default function App() {
             borderRadius:"50%", pointerEvents:"none", animation:"float 8s ease-in-out infinite 1s",
           }}/>
 
-          <div style={{ position:"relative", maxWidth:"760px" }}>
-            <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.05s forwards" }}>
-              <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", color:"#3b82f6", letterSpacing:"0.1em", display:"block", marginBottom:"20px", fontWeight:600 }}>
-                ✦ &nbsp; WELCOME TO MY PROJECTS
-              </span>
+          <div style={{
+            width:"100%", maxWidth:"1200px", margin:"0 auto", display:"flex",
+            flexWrap:"wrap", gap:"48px", alignItems:"center", position:"relative", zIndex:1,
+          }}>
+            <div style={{ flex:"1 1 500px", minWidth:0 }}>
+              <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.05s forwards" }}>
+                <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", color:"#3b82f6", letterSpacing:"0.1em", display:"block", marginBottom:"20px", fontWeight:600 }}>
+                  ✦ &nbsp; WELCOME TO MY PROJECTS
+                </span>
+              </div>
+              <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.15s forwards" }}>
+                <h1 style={{
+                  fontFamily:"'Poppins',sans-serif",
+                  fontSize:"clamp(48px,8vw,88px)",
+                  fontWeight:800, lineHeight:1.08,
+                  color:"#1a202c", marginBottom:"24px", letterSpacing:"-0.02em",
+                  background:"linear-gradient(135deg, #1a202c 0%, #3b82f6 100%)",
+                  backgroundClip:"text",
+                  WebkitBackgroundClip:"text",
+                  WebkitTextFillColor:"transparent",
+                }}>
+                  Projects &<br/>
+                  Experiments
+                </h1>
+              </div>
+              <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.25s forwards" }}>
+                <p style={{
+                  fontFamily:"'Poppins',sans-serif", fontSize:"18px", fontWeight:400,
+                  color:"#4a5568", lineHeight:1.8,
+                  maxWidth:"560px", marginBottom:"48px",
+                }}>
+                  A curated collection of tools, games, dashboards, and full-stack applications organized by technology stack. Explore modern web development in action.
+                </p>
+              </div>
+              <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.35s forwards", display:"flex", gap:"16px", flexWrap:"wrap" }}>
+                <button onClick={() => nav("projects")} style={{
+                  padding:"14px 32px", background:"linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)", 
+                  color:"#ffffff", border:"none", borderRadius:"10px", cursor:"pointer",
+                  fontFamily:"'Poppins',sans-serif", fontSize:"14px", fontWeight:600, letterSpacing:"0.02em",
+                  transition:"all 0.3s ease", boxShadow:"0 4px 15px rgba(59,130,246,0.3)",
+                  position:"relative", overflow:"hidden",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.transform = "translateY(-2px)";
+                  e.target.style.boxShadow = "0 8px 25px rgba(59,130,246,0.4)";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.transform = "translateY(0)";
+                  e.target.style.boxShadow = "0 4px 15px rgba(59,130,246,0.3)";
+                }}>Browse projects ↓</button>
+                <button onClick={() => nav("about")} style={{
+                  padding:"14px 32px", background:"rgba(255,255,255,0.9)", color:"#3b82f6",
+                  border:"2px solid #3b82f6", borderRadius:"10px", cursor:"pointer",
+                  fontFamily:"'Poppins',sans-serif", fontSize:"14px", fontWeight:600, letterSpacing:"0.02em",
+                  transition:"all 0.3s ease", boxShadow:"0 2px 8px rgba(0,0,0,0.04)",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.background = "#3b82f6";
+                  e.target.style.color = "#ffffff";
+                  e.target.style.transform = "translateY(-2px)";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.background = "rgba(255,255,255,0.9)";
+                  e.target.style.color = "#3b82f6";
+                  e.target.style.transform = "translateY(0)";
+                }}>Learn more</button>
+              </div>
             </div>
-            <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.15s forwards" }}>
-              <h1 style={{
-                fontFamily:"'Poppins',sans-serif",
-                fontSize:"clamp(48px,8vw,88px)",
-                fontWeight:800, lineHeight:1.08,
-                color:"#1a202c", marginBottom:"24px", letterSpacing:"-0.02em",
-                background:"linear-gradient(135deg, #1a202c 0%, #3b82f6 100%)",
-                backgroundClip:"text",
-                WebkitBackgroundClip:"text",
-                WebkitTextFillColor:"transparent",
+
+            <div style={{
+              position:"relative", width:"100%", maxWidth:"520px", marginTop:"32px",
+              display:"flex", justifyContent:"center", alignItems:"center",
+            }}>
+              <div style={{
+                position:"absolute", inset:0, background:"radial-gradient(circle at top left, rgba(59,130,246,0.16), transparent 48%), radial-gradient(circle at bottom right, rgba(139,92,246,0.14), transparent 38%)",
+                filter:"blur(38px)", borderRadius:"32px", pointerEvents:"none",
+              }}/>
+              <div style={{
+                position:"relative", width:"100%", borderRadius:"32px", border:"1px solid rgba(15,23,42,0.08)", background:"rgba(255,255,255,0.98)",
+                boxShadow:"0 32px 80px rgba(15,23,42,0.12)", overflow:"hidden",
               }}>
-                Projects &<br/>
-                Experiments
-              </h1>
-            </div>
-            <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.25s forwards" }}>
-              <p style={{
-                fontFamily:"'Poppins',sans-serif", fontSize:"18px", fontWeight:400,
-                color:"#4a5568", lineHeight:1.8,
-                maxWidth:"560px", marginBottom:"48px",
-              }}>
-                A curated collection of tools, games, dashboards, and full-stack applications organized by technology stack. Explore modern web development in action.
-              </p>
-            </div>
-            <div style={{ opacity:0, animation:"fadeUp 0.6s ease 0.35s forwards", display:"flex", gap:"16px", flexWrap:"wrap" }}>
-              <button onClick={() => nav("projects")} style={{
-                padding:"14px 32px", background:"linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)", 
-                color:"#ffffff", border:"none", borderRadius:"10px", cursor:"pointer",
-                fontFamily:"'Poppins',sans-serif", fontSize:"14px", fontWeight:600, letterSpacing:"0.02em",
-                transition:"all 0.3s ease", boxShadow:"0 4px 15px rgba(59,130,246,0.3)",
-                position:"relative", overflow:"hidden",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.transform = "translateY(-2px)";
-                e.target.style.boxShadow = "0 8px 25px rgba(59,130,246,0.4)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.transform = "translateY(0)";
-                e.target.style.boxShadow = "0 4px 15px rgba(59,130,246,0.3)";
-              }}>Browse projects ↓</button>
-              <button onClick={() => nav("about")} style={{
-                padding:"14px 32px", background:"rgba(255,255,255,0.9)", color:"#3b82f6",
-                border:"2px solid #3b82f6", borderRadius:"10px", cursor:"pointer",
-                fontFamily:"'Poppins',sans-serif", fontSize:"14px", fontWeight:600, letterSpacing:"0.02em",
-                transition:"all 0.3s ease", boxShadow:"0 2px 8px rgba(0,0,0,0.04)",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.background = "#3b82f6";
-                e.target.style.color = "#ffffff";
-                e.target.style.transform = "translateY(-2px)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.background = "rgba(255,255,255,0.9)";
-                e.target.style.color = "#3b82f6";
-                e.target.style.transform = "translateY(0)";
-              }}>Learn more</button>
+                <div style={{ padding:"22px 24px", display:"flex", justifyContent:"space-between", alignItems:"center", gap:"12px", background:"rgba(248,250,252,0.95)" }}>
+                  <div style={{ display:"flex", gap:"8px" }}>
+                    <span style={{ width:"12px", height:"12px", borderRadius:"50%", background:"#f97316" }}/> 
+                    <span style={{ width:"12px", height:"12px", borderRadius:"50%", background:"#facc15" }}/> 
+                    <span style={{ width:"12px", height:"12px", borderRadius:"50%", background:"#34d399" }}/> 
+                  </div>
+                  <span style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", fontWeight:700, color:"#475569", letterSpacing:"0.08em" }}>WEB DEVELOPER</span>
+                </div>
+                <div style={{ padding:"26px", background:"#0f172a", color:"#e2e8f0", fontFamily:"'JetBrains Mono',monospace", minHeight:"310px", display:"flex", flexDirection:"column", gap:"18px" }}>
+                  <div style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0, 1fr))", gap:"10px" }}>
+                    {[
+                      { label:"HTML", color:"#ef4444" },
+                      { label:"CSS", color:"#3b82f6" },
+                      { label:"JS", color:"#f59e0b" },
+                    ].map(item => (
+                      <span key={item.label} style={{ padding:"8px 10px", borderRadius:"999px", background:item.color, color:"#0f172a", fontSize:"12px", fontWeight:700, textAlign:"center" }}>{item.label}</span>
+                    ))}
+                  </div>
+                  <div style={{ display:"grid", gap:"10px", lineHeight:1.6, fontSize:"14px" }}>
+                    {[
+                      "const developer = {",
+                      "  role: 'web developer',",
+                      "  focus: 'UI / UX / performance',",
+                      "  stack: ['React', 'Next.js', 'Node', 'CSS'],",
+                      "};",
+                    ].map((line, idx) => (
+                      <div key={idx} style={{ display:"flex", gap:"10px", alignItems:"center" }}>
+                        <span style={{ width:"10px", color:"#64748b" }}>{idx + 1}</span>
+                        <code style={{ whiteSpace:"pre-wrap" }}>{line}</code>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ marginTop:"auto", display:"flex", justifyContent:"space-between", alignItems:"center", paddingTop:"12px", borderTop:"1px solid rgba(226,232,240,0.18)" }}>
+                    <div>
+                      <p style={{ fontFamily:"'Poppins',sans-serif", fontSize:"12px", color:"#94a3b8", textTransform:"uppercase", letterSpacing:"0.14em", marginBottom:"6px" }}>Featured</p>
+                      <p style={{ margin:0, fontFamily:"'Poppins',sans-serif", fontSize:"16px", fontWeight:700, color:"#ffffff" }}>Portfolio dashboard</p>
+                    </div>
+                    <div style={{ width:"48px", height:"48px", borderRadius:"16px", background:"linear-gradient(135deg, #38bdf8, #818cf8)", display:"grid", placeItems:"center", color:"#ffffff", fontWeight:700, boxShadow:"0 14px 30px rgba(15,23,42,0.16)" }}>
+                      DEV
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
